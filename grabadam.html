@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jom Singgah Burger Stall</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8e7;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #ffbb33;
+      color: white;
+      padding: 20px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    .menu-section {
+      background-color: white;
+      border-radius: 15px;
+      margin: 20px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #ff8800;
+      margin-bottom: 10px;
+    }
+    .item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+    }
+    select {
+      padding: 5px;
+      margin-top: 5px;
+    }
+    button {
+      background-color: #ff8800;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      margin-top: 8px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff5500;
+    }
+    footer {
+      margin: 30px;
+      color: gray;
+    }
+  </style>
+</head>
+<body onload="playSound()">
+
+  <audio id="introSound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+
+  <header>🍔 Jom Singgah Burger Stall 🍹</header>
+
+  <div class="menu-section" id="burgerMenu">
+    <h2>Burger</h2>
+    <div class="item">Burger Ayam - RM3.50<br>
+      Add-on: 
+      <select id="burgerAyamAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Burger Ayam', 3.5, 'burgerAyamAddon')">Order</button>
+    </div>
+
+    <div class="item">Burger Daging - RM3.50<br>
+      Add-on: 
+      <select id="burgerDagingAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Burger Daging', 3.5, 'burgerDagingAddon')">Order</button>
+    </div>
+
+    <div class="item">Burger Ayam Special - RM4.50<br>
+      Add-on: 
+      <select id="burgerAyamSpAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Burger Ayam Special', 4.5, 'burgerAyamSpAddon')">Order</button>
+    </div>
+
+    <div class="item">Burger Daging Special - RM4.50<br>
+      Add-on: 
+      <select id="burgerDagingSpAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Burger Daging Special', 4.5, 'burgerDagingSpAddon')">Order</button>
+    </div>
+
+    <div class="item">Burger Ayam Double - RM4.50<br>
+      Add-on: 
+      <select id="burgerAyamDoubleAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Burger Ayam Double', 4.5, 'burgerAyamDoubleAddon')">Order</button>
+    </div>
+
+    <div class="item">Burger Daging Double - RM4.50<br>
+      Add-on: 
+      <select id="burgerDagingDoubleAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Burger Daging Double', 4.5, 'burgerDagingDoubleAddon')">Order</button>
+    </div>
+
+    <div class="item">Burger Ayam Double Special - RM5.50<br>
+      Add-on: 
+      <select id="burgerAyamDoubleSpAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Burger Ayam Double Special', 5.5, 'burgerAyamDoubleSpAddon')">Order</button>
+    </div>
+
+    <div class="item">Burger Daging Double Special - RM5.50<br>
+      Add-on: 
+      <select id="burgerDagingDoubleSpAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Burger Daging Double Special', 5.5, 'burgerDagingDoubleSpAddon')">Order</button>
+    </div>
+  </div>
+
+  <div class="menu-section" id="rotiJohn">
+    <h2>Roti John</h2>
+    <div class="item">Roti John Ayam - RM7<br>
+      Add-on: 
+      <select id="rotiJohnAyamAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Roti John Ayam', 7, 'rotiJohnAyamAddon')">Order</button>
+    </div>
+
+    <div class="item">Roti John Daging - RM7<br>
+      Add-on: 
+      <select id="rotiJohnDagingAddon">
+        <option value="0">Tiada</option>
+        <option value="1">Cheese (+RM1)</option>
+      </select><br>
+      <button onclick="addToHistory('Roti John Daging', 7, 'rotiJohnDagingAddon')">Order</button>
+    </div>
+  </div>
+
+  <div class="menu-section" id="air">
+    <h2>Minuman</h2>
+    <div class="item">Chocolate / Mocha Classic - RM6<br><button onclick="addToHistory('Chocolate/Mocha Classic', 6)">Order</button></div>
+    <div class="item">Chocolate / Mocha Premium - RM7<br><button onclick="addToHistory('Chocolate/Mocha Premium', 7)">Order</button></div>
+    <div class="item">Chocolate / Mocha Caramel - RM7<br><button onclick="addToHistory('Chocolate/Mocha Caramel', 7)">Order</button></div>
+    <div class="item">Chocolate / Mocha Strawberry - RM7<br><button onclick="addToHistory('Chocolate/Mocha Strawberry', 7)">Order</button></div>
+    <div class="item">Chocolate Caramel / Mocha Caramel Special - RM9<br><button onclick="addToHistory('Chocolate/Mocha Caramel Special', 9)">Order</button></div>
+    <div class="item">Chocolate Strawberry / Mocha Strawberry Special - RM9<br><button onclick="addToHistory('Chocolate/Mocha Strawberry Special', 9)">Order</button></div>
+    <div class="item">Chocolate / Mocha Special - RM9<br><button onclick="addToHistory('Chocolate/Mocha Special', 9)">Order</button></div>
+  </div>
+
+  <button onclick="window.location.href='history.html'">Lihat Sejarah Pesanan</button>
+
+  <footer>© 2025 Jom Singgah Burger Stall</footer>
+
+  <script>
+    function playSound() {
+      document.getElementById('introSound').play();
+    }
+
+    function addToHistory(item, price, addonId) {
+      let addonPrice = 0;
+      if (addonId) {
+        addonPrice = parseFloat(document.getElementById(addonId).value);
+      }
+      let total = price + addonPrice;
+      let orders = JSON.parse(localStorage.getItem('orderHistory')) || [];
+      orders.push({item: item, price: total});
+      localStorage.setItem('orderHistory', JSON.stringify(orders));
+      alert(item + " berjaya dipesan! Jumlah: RM" + total.toFixed(2));
+    }
+  </script>
+</body>
+</html>
